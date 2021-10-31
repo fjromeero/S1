@@ -14,7 +14,7 @@ try:
     cursor.execute('drop table Stock; ')
     
     #Creamos las 3 tablas
-    cursor.execute('Create table Stock( Codigo number(2) primary key, Cantidad number(4)  check (Cantidad >= 1)); ')
+    cursor.execute('Create table Stock( Cproducto number(2) primary key, Cantidad number(4)  check (Cantidad >= 1)); ')
     cursor.execute('create table Pedido( Cpedido number(5) primary key, Ccliente number(4) not null, Fecha-pedido date); ')
     cursor.execute('create table Detalle-pedido( Cproducto constraint Cproducto_clave_externa references Stock(Cproducto), Cpedido constraint Cpedido_clave_externa references Pedido(Cpedido), Cantidad number(4) not null check (status >= 1),constraint clave_primaria primary key (Cproducto ,Cpedido) ); ')
     
