@@ -30,6 +30,9 @@ try:
     cursor.execute('insert into Stock values(09, 120);')
     cursor.execute('insert into Stock values(10, 712);')
 
+    #Hacemos un savepoint
+    cursor.execute('SAVEPOINT inicial;')
+    # cursor.execute('ROLLBACK TO do_insert;')
 except Exception as ex:
     print(ex)
 finally:
